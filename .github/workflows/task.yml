@@ -15,7 +15,7 @@ jobs:
     name: test1
     steps:
     - name: checkout the code
-      uses: actions/checkout@4
+      uses: actions/checkout@3
 
   test2:
     runs-on: ubuntu-latest
@@ -23,7 +23,7 @@ jobs:
     name: test2
     steps:
     - name: checkout the code test2
-      uses: actions/checkout@4
+      uses: actions/checkout@3
 
 
   deploy1:
@@ -33,7 +33,7 @@ jobs:
     name: deploy test1
     steps:
     - name: checkout test1
-      uses: actions/checkout@4
+      uses: actions/checkout@3
 
 
   deploy2:
@@ -43,7 +43,7 @@ jobs:
     name: deploy test2
     steps:
     - name: checkout test2
-      uses: actions/checkout@4    
+      uses: actions/checkout@3
 
 
       
