@@ -1,0 +1,47 @@
+name: multi builds
+
+on:
+  workflow_dispatch:
+    inputs:
+      Deploy-to:
+        type: environment
+        description: Select the environment
+        required: true
+
+jobs:
+  test1:
+    runs-on: ubuntu-latest
+    environment: ${{ inputs.Deploy-to }}
+    name: test1
+    steps:
+    - name: checkout the code
+      uses: actions/checkout@4
+
+  test2:
+    runs-on: ubuntu-latest
+    environment: ${{ inputs.Deploy-to }}
+    name: test2
+    steps:
+    - name: checkout the code test2
+      uses: actions/checkout@4
+
+
+  deploy1:
+    runs-on: ubuntu-latest
+    environment: ${{ inputs.Deploy-to }}
+    name: deploy test1
+    steps:
+    - name: checkout test1
+      uses: actions/checkout@4
+
+
+  deploy2:
+    runs-on: ubuntu-latest
+    environment: ${{ inputs.Deploy-to }}
+    name: deploy test2
+    steps:
+    - name: checkout test2
+      uses: actions/checkout@4    
+
+
+      
