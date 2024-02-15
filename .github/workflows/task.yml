@@ -27,6 +27,7 @@ jobs:
 
 
   deploy1:
+    needs: test1
     runs-on: ubuntu-latest
     environment: ${{ inputs.Deploy-to }}
     name: deploy test1
@@ -36,6 +37,7 @@ jobs:
 
 
   deploy2:
+    needs: [ deploy1, test2 ]
     runs-on: ubuntu-latest
     environment: ${{ inputs.Deploy-to }}
     name: deploy test2
